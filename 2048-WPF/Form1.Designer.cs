@@ -29,22 +29,22 @@ namespace _2048_WPF
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
+            this.p11 = new System.Windows.Forms.Panel();
+            this.p12 = new System.Windows.Forms.Panel();
+            this.p22 = new System.Windows.Forms.Panel();
+            this.p21 = new System.Windows.Forms.Panel();
+            this.p23 = new System.Windows.Forms.Panel();
+            this.p13 = new System.Windows.Forms.Panel();
+            this.p14 = new System.Windows.Forms.Panel();
+            this.p24 = new System.Windows.Forms.Panel();
+            this.p31 = new System.Windows.Forms.Panel();
+            this.p32 = new System.Windows.Forms.Panel();
+            this.p42 = new System.Windows.Forms.Panel();
+            this.p41 = new System.Windows.Forms.Panel();
+            this.p43 = new System.Windows.Forms.Panel();
+            this.p33 = new System.Windows.Forms.Panel();
+            this.p34 = new System.Windows.Forms.Panel();
+            this.p44 = new System.Windows.Forms.Panel();
             this.UpBtn = new System.Windows.Forms.Button();
             this.SwitchToKbdBtn = new System.Windows.Forms.Button();
             this.DownBtn = new System.Windows.Forms.Button();
@@ -52,117 +52,117 @@ namespace _2048_WPF
             this.LeftBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // panel1
+            // p11
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(50, 50);
-            this.panel1.TabIndex = 0;
+            this.p11.Location = new System.Drawing.Point(12, 12);
+            this.p11.Name = "p11";
+            this.p11.Size = new System.Drawing.Size(50, 50);
+            this.p11.TabIndex = 0;
             // 
-            // panel2
+            // p12
             // 
-            this.panel2.Location = new System.Drawing.Point(68, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(50, 50);
-            this.panel2.TabIndex = 0;
+            this.p12.Location = new System.Drawing.Point(68, 12);
+            this.p12.Name = "p12";
+            this.p12.Size = new System.Drawing.Size(50, 50);
+            this.p12.TabIndex = 0;
             // 
-            // panel3
+            // p22
             // 
-            this.panel3.Location = new System.Drawing.Point(68, 68);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(50, 50);
-            this.panel3.TabIndex = 0;
+            this.p22.Location = new System.Drawing.Point(68, 68);
+            this.p22.Name = "p22";
+            this.p22.Size = new System.Drawing.Size(50, 50);
+            this.p22.TabIndex = 0;
             // 
-            // panel4
+            // p21
             // 
-            this.panel4.Location = new System.Drawing.Point(12, 68);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(50, 50);
-            this.panel4.TabIndex = 0;
+            this.p21.Location = new System.Drawing.Point(12, 68);
+            this.p21.Name = "p21";
+            this.p21.Size = new System.Drawing.Size(50, 50);
+            this.p21.TabIndex = 0;
             // 
-            // panel5
+            // p23
             // 
-            this.panel5.Location = new System.Drawing.Point(124, 68);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(50, 50);
-            this.panel5.TabIndex = 0;
+            this.p23.Location = new System.Drawing.Point(124, 68);
+            this.p23.Name = "p23";
+            this.p23.Size = new System.Drawing.Size(50, 50);
+            this.p23.TabIndex = 0;
             // 
-            // panel6
+            // p13
             // 
-            this.panel6.Location = new System.Drawing.Point(124, 12);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(50, 50);
-            this.panel6.TabIndex = 0;
+            this.p13.Location = new System.Drawing.Point(124, 12);
+            this.p13.Name = "p13";
+            this.p13.Size = new System.Drawing.Size(50, 50);
+            this.p13.TabIndex = 0;
             // 
-            // panel7
+            // p14
             // 
-            this.panel7.Location = new System.Drawing.Point(180, 12);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(50, 50);
-            this.panel7.TabIndex = 0;
+            this.p14.Location = new System.Drawing.Point(180, 12);
+            this.p14.Name = "p14";
+            this.p14.Size = new System.Drawing.Size(50, 50);
+            this.p14.TabIndex = 0;
             // 
-            // panel8
+            // p24
             // 
-            this.panel8.Location = new System.Drawing.Point(180, 68);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(50, 50);
-            this.panel8.TabIndex = 0;
+            this.p24.Location = new System.Drawing.Point(180, 68);
+            this.p24.Name = "p24";
+            this.p24.Size = new System.Drawing.Size(50, 50);
+            this.p24.TabIndex = 0;
             // 
-            // panel9
+            // p31
             // 
-            this.panel9.Location = new System.Drawing.Point(12, 124);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(50, 50);
-            this.panel9.TabIndex = 0;
+            this.p31.Location = new System.Drawing.Point(12, 124);
+            this.p31.Name = "p31";
+            this.p31.Size = new System.Drawing.Size(50, 50);
+            this.p31.TabIndex = 0;
             // 
-            // panel10
+            // p32
             // 
-            this.panel10.Location = new System.Drawing.Point(68, 124);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(50, 50);
-            this.panel10.TabIndex = 0;
+            this.p32.Location = new System.Drawing.Point(68, 124);
+            this.p32.Name = "p32";
+            this.p32.Size = new System.Drawing.Size(50, 50);
+            this.p32.TabIndex = 0;
             // 
-            // panel11
+            // p42
             // 
-            this.panel11.Location = new System.Drawing.Point(68, 180);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(50, 50);
-            this.panel11.TabIndex = 0;
+            this.p42.Location = new System.Drawing.Point(68, 180);
+            this.p42.Name = "p42";
+            this.p42.Size = new System.Drawing.Size(50, 50);
+            this.p42.TabIndex = 0;
             // 
-            // panel12
+            // p41
             // 
-            this.panel12.Location = new System.Drawing.Point(12, 180);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(50, 50);
-            this.panel12.TabIndex = 0;
+            this.p41.Location = new System.Drawing.Point(12, 180);
+            this.p41.Name = "p41";
+            this.p41.Size = new System.Drawing.Size(50, 50);
+            this.p41.TabIndex = 0;
             // 
-            // panel13
+            // p43
             // 
-            this.panel13.Location = new System.Drawing.Point(124, 180);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(50, 50);
-            this.panel13.TabIndex = 0;
+            this.p43.Location = new System.Drawing.Point(124, 180);
+            this.p43.Name = "p43";
+            this.p43.Size = new System.Drawing.Size(50, 50);
+            this.p43.TabIndex = 0;
             // 
-            // panel14
+            // p33
             // 
-            this.panel14.Location = new System.Drawing.Point(124, 124);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(50, 50);
-            this.panel14.TabIndex = 0;
+            this.p33.Location = new System.Drawing.Point(124, 124);
+            this.p33.Name = "p33";
+            this.p33.Size = new System.Drawing.Size(50, 50);
+            this.p33.TabIndex = 0;
             // 
-            // panel15
+            // p34
             // 
-            this.panel15.Location = new System.Drawing.Point(180, 124);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(50, 50);
-            this.panel15.TabIndex = 0;
+            this.p34.Location = new System.Drawing.Point(180, 124);
+            this.p34.Name = "p34";
+            this.p34.Size = new System.Drawing.Size(50, 50);
+            this.p34.TabIndex = 0;
             // 
-            // panel16
+            // p44
             // 
-            this.panel16.Location = new System.Drawing.Point(180, 180);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(50, 50);
-            this.panel16.TabIndex = 0;
+            this.p44.Location = new System.Drawing.Point(180, 180);
+            this.p44.Name = "p44";
+            this.p44.Size = new System.Drawing.Size(50, 50);
+            this.p44.TabIndex = 0;
             // 
             // UpBtn
             // 
@@ -218,46 +218,46 @@ namespace _2048_WPF
             this.Controls.Add(this.DownBtn);
             this.Controls.Add(this.SwitchToKbdBtn);
             this.Controls.Add(this.UpBtn);
-            this.Controls.Add(this.panel16);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel15);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel14);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel13);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel12);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel11);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.p44);
+            this.Controls.Add(this.p24);
+            this.Controls.Add(this.p34);
+            this.Controls.Add(this.p14);
+            this.Controls.Add(this.p33);
+            this.Controls.Add(this.p13);
+            this.Controls.Add(this.p43);
+            this.Controls.Add(this.p23);
+            this.Controls.Add(this.p41);
+            this.Controls.Add(this.p21);
+            this.Controls.Add(this.p42);
+            this.Controls.Add(this.p22);
+            this.Controls.Add(this.p32);
+            this.Controls.Add(this.p31);
+            this.Controls.Add(this.p12);
+            this.Controls.Add(this.p11);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "2048";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel p11;
+        private System.Windows.Forms.Panel p12;
+        private System.Windows.Forms.Panel p22;
+        private System.Windows.Forms.Panel p21;
+        private System.Windows.Forms.Panel p23;
+        private System.Windows.Forms.Panel p13;
+        private System.Windows.Forms.Panel p14;
+        private System.Windows.Forms.Panel p24;
+        private System.Windows.Forms.Panel p31;
+        private System.Windows.Forms.Panel p32;
+        private System.Windows.Forms.Panel p42;
+        private System.Windows.Forms.Panel p41;
+        private System.Windows.Forms.Panel p43;
+        private System.Windows.Forms.Panel p33;
+        private System.Windows.Forms.Panel p34;
+        private System.Windows.Forms.Panel p44;
         private System.Windows.Forms.Button UpBtn;
         private System.Windows.Forms.Button SwitchToKbdBtn;
         private System.Windows.Forms.Button DownBtn;
