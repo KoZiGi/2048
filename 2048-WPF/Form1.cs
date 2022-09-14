@@ -17,7 +17,6 @@ namespace _2048_WPF
         public bool WASD = false;
         public Panel[,] panels;
         
-        bool WASD = false;
         public int moves = 0;
         public Form1()
         {
