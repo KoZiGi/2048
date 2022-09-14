@@ -14,11 +14,28 @@ namespace _2048_WPF
     {
         public int[,] GameField = new int[6, 6];
         public bool WASD = false;
+        public Panel[,] panels;
         
         public Form1()
         {
             InitializeComponent();
             FillTheMatrix();
+           /* panels = new Panel[,]{
+                { p11,p12,p13,p14 },
+                { p21,p22,p23,p24 },
+                { p31,p32,p33,p34 },
+                { p41,p42,p43,p44 }
+            }; */
+        }
+        private void Display()
+        {
+            for (int sor = 1; sor < 5; sor++)
+            {
+                for (int oszlop = 1; oszlop < 5; oszlop++)
+                {
+                    //panels[sor - 1, oszlop - 1];
+                }
+            }
         }
         private void FillTheMatrix()
         {
