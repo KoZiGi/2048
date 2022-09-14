@@ -13,7 +13,16 @@ namespace _2048_WPF
 {
     public partial class Form1 : Form
     {
-        public int[,] GameField = new int[6, 6];
+        public int[,] GameField =
+        {
+            {1,1,1,1,1,1 },
+            {1,2,0,0,0,1 },
+            {1,0,0,0,0,1 },
+            {1,2,0,0,0,1 },
+            {1,0,0,0,0,1 },
+            {1,1,1,1,1,1 }
+        };
+        
         public bool WASD = false;
         public Panel[,] panels;
         
@@ -41,11 +50,44 @@ namespace _2048_WPF
         }
         private void FillTheMatrix()
         {
-            for (int i = 0; i < 6; i++) 
-                for (int j = 0; j < 6; j++) 
+            for (int i = 0; i < 6; i++)
+                for (int j = 0; j < 6; j++)
                     GameField[i, j] = (i == 0 || i == 5 || j == 0 || j == 5) ? 1 : 0;
         }
+        private void CheckMove(int oriGinalX, int oriGinalY, int dir, int toX, int toY)
+        {
+            if (GameField[oriGinalX, oriGinalY] != 0)
+            {
+                switch (dir)
+                {
+                    case 0:
+                        if (GameField[toX, toY] == 0)
+                        {
+                            //Következő lépés megtekintése
+                            CheckMove(oriGinalX, oriGinalY, dir, toX, toY++);
+                        }
+                        else if (GameField[toX, toY] == GameField[oriGinalX, oriGinalY])
+                        {
+                            //merge másik számmal
+                            GameField[toX, toY] *= 2;
+                            GameField[oriGinalX, oriGinalX] = 0;
+                        }
+                        else if (GameField[toX, toY] != 1 || GameField[toX, toY] != 0)
+                        {
+                            //ne csinálj semmit
+                            break;
+                        }
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
 
+                }
+            }
+        }
         private void CreateHighScores()
         {
             HighScoreDialog hs = new HighScoreDialog(moves);
@@ -54,6 +96,13 @@ namespace _2048_WPF
         private void DoMove(int direction)
         {
 
+            for (int i = 1; i < GameField.GetLength(0)-1; i++)
+            {
+                for (int g = 1; g < GameField.GetLength(1)-1; g++)
+                {
+                    CheckMove(i, g, direction, direction == 0 || direction == 2 ? 0 : direction == 1 ? 1 : -1, direction == 3 || direction == 1 ? 0 : direction == 0 ? -1 : 1);
+                }
+            }
         }
         private int[,] Randomize()
         {
