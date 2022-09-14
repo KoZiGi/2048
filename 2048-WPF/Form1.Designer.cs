@@ -188,6 +188,7 @@ namespace _2048_WPF
             this.UpBtn.TabIndex = 1;
             this.UpBtn.Text = "Fel";
             this.UpBtn.UseVisualStyleBackColor = true;
+            this.UpBtn.Click += new System.EventHandler(this.UpBtn_Click);
             // 
             // SwitchToKbdBtn
             // 
@@ -206,6 +207,7 @@ namespace _2048_WPF
             this.DownBtn.TabIndex = 1;
             this.DownBtn.Text = "Le";
             this.DownBtn.UseVisualStyleBackColor = true;
+            this.DownBtn.Click += new System.EventHandler(this.DownBtn_Click);
             // 
             // RightBtn
             // 
@@ -215,6 +217,7 @@ namespace _2048_WPF
             this.RightBtn.TabIndex = 1;
             this.RightBtn.Text = "Jobb";
             this.RightBtn.UseVisualStyleBackColor = true;
+            this.RightBtn.Click += new System.EventHandler(this.RightBtn_Click);
             // 
             // LeftBtn
             // 
@@ -224,6 +227,7 @@ namespace _2048_WPF
             this.LeftBtn.TabIndex = 1;
             this.LeftBtn.Text = "Bal";
             this.LeftBtn.UseVisualStyleBackColor = true;
+            this.LeftBtn.Click += new System.EventHandler(this.LeftBtn_Click);
             // 
             // Form1
             // 
