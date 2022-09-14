@@ -198,6 +198,7 @@ namespace _2048_WPF
             this.SwitchToKbdBtn.TabIndex = 1;
             this.SwitchToKbdBtn.UseVisualStyleBackColor = true;
             this.SwitchToKbdBtn.Click += new System.EventHandler(this.SwitchToKbdBtn_Click);
+            this.SwitchToKbdBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SwitchToKbdBtn_KeyPress);
             // 
             // DownBtn
             // 

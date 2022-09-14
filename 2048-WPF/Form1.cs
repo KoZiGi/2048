@@ -19,6 +19,13 @@ namespace _2048_WPF
         public Form1()
         {
             InitializeComponent();
+            FillTheMatrix();
+        }
+        private void FillTheMatrix()
+        {
+            for (int i = 0; i < 6; i++) 
+                for (int j = 0; j < 6; j++) 
+                    GameField[i, j] = (i == 0 || i == 5 || j == 0 || j == 5) ? 1 : 0;
         }
 
         private void CreateHighScores()
@@ -79,6 +86,29 @@ namespace _2048_WPF
                 RightBtn.Enabled = false;
                 DownBtn.Enabled = false;
                 WASD = true;
+            }
+        }
+
+        private void SwitchToKbdBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (WASD)
+            {
+                
+                switch (e.KeyChar.ToString().ToUpper())
+                {
+                    case "W":
+                        DoMove(0);
+                        break;
+                    case "A":
+                        DoMove(3);
+                        break;
+                    case "S":
+                        DoMove(2);
+                        break;
+                    case "D":
+                        DoMove(1);
+                        break;
+                }
             }
         }
     }
