@@ -54,6 +54,7 @@ namespace _2048_WPF
             // 
             // p11
             // 
+            this.p11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p11.Location = new System.Drawing.Point(12, 12);
             this.p11.Name = "p11";
             this.p11.Size = new System.Drawing.Size(50, 50);
@@ -61,6 +62,7 @@ namespace _2048_WPF
             // 
             // p12
             // 
+            this.p12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p12.Location = new System.Drawing.Point(68, 12);
             this.p12.Name = "p12";
             this.p12.Size = new System.Drawing.Size(50, 50);
@@ -68,6 +70,7 @@ namespace _2048_WPF
             // 
             // p22
             // 
+            this.p22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p22.Location = new System.Drawing.Point(68, 68);
             this.p22.Name = "p22";
             this.p22.Size = new System.Drawing.Size(50, 50);
@@ -75,6 +78,7 @@ namespace _2048_WPF
             // 
             // p21
             // 
+            this.p21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p21.Location = new System.Drawing.Point(12, 68);
             this.p21.Name = "p21";
             this.p21.Size = new System.Drawing.Size(50, 50);
@@ -82,6 +86,7 @@ namespace _2048_WPF
             // 
             // p23
             // 
+            this.p23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p23.Location = new System.Drawing.Point(124, 68);
             this.p23.Name = "p23";
             this.p23.Size = new System.Drawing.Size(50, 50);
@@ -89,6 +94,7 @@ namespace _2048_WPF
             // 
             // p13
             // 
+            this.p13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p13.Location = new System.Drawing.Point(124, 12);
             this.p13.Name = "p13";
             this.p13.Size = new System.Drawing.Size(50, 50);
@@ -96,6 +102,7 @@ namespace _2048_WPF
             // 
             // p14
             // 
+            this.p14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p14.Location = new System.Drawing.Point(180, 12);
             this.p14.Name = "p14";
             this.p14.Size = new System.Drawing.Size(50, 50);
@@ -103,6 +110,7 @@ namespace _2048_WPF
             // 
             // p24
             // 
+            this.p24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p24.Location = new System.Drawing.Point(180, 68);
             this.p24.Name = "p24";
             this.p24.Size = new System.Drawing.Size(50, 50);
@@ -110,6 +118,7 @@ namespace _2048_WPF
             // 
             // p31
             // 
+            this.p31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p31.Location = new System.Drawing.Point(12, 124);
             this.p31.Name = "p31";
             this.p31.Size = new System.Drawing.Size(50, 50);
@@ -117,6 +126,7 @@ namespace _2048_WPF
             // 
             // p32
             // 
+            this.p32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p32.Location = new System.Drawing.Point(68, 124);
             this.p32.Name = "p32";
             this.p32.Size = new System.Drawing.Size(50, 50);
@@ -124,6 +134,7 @@ namespace _2048_WPF
             // 
             // p42
             // 
+            this.p42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p42.Location = new System.Drawing.Point(68, 180);
             this.p42.Name = "p42";
             this.p42.Size = new System.Drawing.Size(50, 50);
@@ -131,6 +142,7 @@ namespace _2048_WPF
             // 
             // p41
             // 
+            this.p41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p41.Location = new System.Drawing.Point(12, 180);
             this.p41.Name = "p41";
             this.p41.Size = new System.Drawing.Size(50, 50);
@@ -138,6 +150,7 @@ namespace _2048_WPF
             // 
             // p43
             // 
+            this.p43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p43.Location = new System.Drawing.Point(124, 180);
             this.p43.Name = "p43";
             this.p43.Size = new System.Drawing.Size(50, 50);
@@ -145,6 +158,7 @@ namespace _2048_WPF
             // 
             // p33
             // 
+            this.p33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p33.Location = new System.Drawing.Point(124, 124);
             this.p33.Name = "p33";
             this.p33.Size = new System.Drawing.Size(50, 50);
@@ -152,6 +166,7 @@ namespace _2048_WPF
             // 
             // p34
             // 
+            this.p34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p34.Location = new System.Drawing.Point(180, 124);
             this.p34.Name = "p34";
             this.p34.Size = new System.Drawing.Size(50, 50);
@@ -159,6 +174,7 @@ namespace _2048_WPF
             // 
             // p44
             // 
+            this.p44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p44.Location = new System.Drawing.Point(180, 180);
             this.p44.Name = "p44";
             this.p44.Size = new System.Drawing.Size(50, 50);
@@ -166,7 +182,7 @@ namespace _2048_WPF
             // 
             // UpBtn
             // 
-            this.UpBtn.Location = new System.Drawing.Point(101, 236);
+            this.UpBtn.Location = new System.Drawing.Point(101, 268);
             this.UpBtn.Name = "UpBtn";
             this.UpBtn.Size = new System.Drawing.Size(40, 40);
             this.UpBtn.TabIndex = 1;
@@ -175,15 +191,16 @@ namespace _2048_WPF
             // 
             // SwitchToKbdBtn
             // 
-            this.SwitchToKbdBtn.Location = new System.Drawing.Point(101, 282);
+            this.SwitchToKbdBtn.Location = new System.Drawing.Point(101, 314);
             this.SwitchToKbdBtn.Name = "SwitchToKbdBtn";
             this.SwitchToKbdBtn.Size = new System.Drawing.Size(40, 40);
             this.SwitchToKbdBtn.TabIndex = 1;
             this.SwitchToKbdBtn.UseVisualStyleBackColor = true;
+            this.SwitchToKbdBtn.Click += new System.EventHandler(this.SwitchToKbdBtn_Click);
             // 
             // DownBtn
             // 
-            this.DownBtn.Location = new System.Drawing.Point(101, 328);
+            this.DownBtn.Location = new System.Drawing.Point(101, 360);
             this.DownBtn.Name = "DownBtn";
             this.DownBtn.Size = new System.Drawing.Size(40, 40);
             this.DownBtn.TabIndex = 1;
@@ -192,7 +209,7 @@ namespace _2048_WPF
             // 
             // RightBtn
             // 
-            this.RightBtn.Location = new System.Drawing.Point(147, 282);
+            this.RightBtn.Location = new System.Drawing.Point(147, 314);
             this.RightBtn.Name = "RightBtn";
             this.RightBtn.Size = new System.Drawing.Size(40, 40);
             this.RightBtn.TabIndex = 1;
@@ -201,7 +218,7 @@ namespace _2048_WPF
             // 
             // LeftBtn
             // 
-            this.LeftBtn.Location = new System.Drawing.Point(55, 282);
+            this.LeftBtn.Location = new System.Drawing.Point(55, 314);
             this.LeftBtn.Name = "LeftBtn";
             this.LeftBtn.Size = new System.Drawing.Size(40, 40);
             this.LeftBtn.TabIndex = 1;
