@@ -64,5 +64,28 @@ namespace _2048_WPF
                 WASD = true;
             }
         }
+
+        private void SwitchToKbdBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (WASD)
+            {
+                
+                switch (e.KeyChar.ToString().ToUpper())
+                {
+                    case "W":
+                        DoMove(0);
+                        break;
+                    case "A":
+                        DoMove(3);
+                        break;
+                    case "S":
+                        DoMove(2);
+                        break;
+                    case "D":
+                        DoMove(1);
+                        break;
+                }
+            }
+        }
     }
 }
