@@ -12,11 +12,19 @@ namespace _2048_WPF
 {
     public partial class Form1 : Form
     {
-        public int[,] GameField = new int[4, 4];
-        bool WASD = false;
+        public int[,] GameField = new int[6, 6];
+        public bool WASD = false;
+        
         public Form1()
         {
             InitializeComponent();
+            FillTheMatrix();
+        }
+        private void FillTheMatrix()
+        {
+            for (int i = 0; i < 6; i++) 
+                for (int j = 0; j < 6; j++) 
+                    GameField[i, j] = (i == 0 || i == 5 || j == 0 || j == 5) ? 1 : 0;
         }
 
 
