@@ -55,42 +55,6 @@ namespace _2048_WPF
                 for (int j = 0; j < 6; j++)
                     GameField[i, j] = (i == 0 || i == 5 || j == 0 || j == 5) ? 1 : 0;
         }
-        private void CheckMove(int oriGinalX, int oriGinalY, int dir, int toX, int toY)
-        {
-            if (GameField[oriGinalX, oriGinalY] != 0)
-            {
-                switch (dir)
-                {
-                    case 0:
-                        if (GameField[toX, toY] == 0)
-                        {
-                            //Következő lépés megtekintése
-                            CheckMove(oriGinalX, oriGinalY, dir, toX, toY--);
-                            break;
-                        }
-                        else if (GameField[toX, toY] == GameField[oriGinalX, oriGinalY])
-                        {
-                            //merge másik számmal
-                            GameField[toX, toY] *= 2;
-                            GameField[oriGinalX, oriGinalX] = 0;
-                            break;
-                        }
-                        else if (GameField[toX, toY] != 1 || GameField[toX, toY] != 0)
-                        {
-                            //ne csinálj semmit
-                            break;
-                        }
-                        else break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-
-                }
-            }
-        }
         private void CreateHighScores()
         {
             HighScoreDialog hs = new HighScoreDialog(moves);
@@ -99,13 +63,6 @@ namespace _2048_WPF
         private void DoMove(int direction)
         {
 
-            for (int i = 1; i < GameField.GetLength(0)-1; i++)
-            {
-                for (int g = 1; g < GameField.GetLength(1)-1; g++)
-                {
-                    CheckMove(i, g, direction, direction == i || direction == 2 ? i : direction == 1 ? i+1 : i-1, direction == 3 || direction == 1 ? g : direction == 0 ? g-1 : g+1);
-                }
-            }
         }
         private int[,] Randomize()
         {
@@ -181,7 +138,5 @@ namespace _2048_WPF
                 }
             }
         }
-
-        
     }
 }
