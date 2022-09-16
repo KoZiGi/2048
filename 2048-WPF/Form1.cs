@@ -16,16 +16,15 @@ namespace _2048_WPF
         public static int[,] GameField =
         {
             {1,1,1,1,1,1 },
+            {1,2,0,0,2,1 },
             {1,2,0,0,0,1 },
-            {1,0,0,0,0,1 },
-            {1,2,0,0,0,1 },
-            {1,0,0,0,0,1 },
+            {1,2,0,2,0,1 },
+            {1,2,2,0,0,1 },
             {1,1,1,1,1,1 }
         };
-        
         public bool WASD = false;
         public Label[,] labels;
-        
+        Mve mve;
         public int moves = 0;
         public Form1()
         {
@@ -37,6 +36,7 @@ namespace _2048_WPF
                 {l31,l32,l33,l34 },
                 {l41,l42,l43,l44 }
             };
+            mve = new Mve(GameField);
             Display();
         }
         private void Display()
@@ -45,7 +45,7 @@ namespace _2048_WPF
             {
                 for (int oszlop = 1; oszlop < 5; oszlop++)
                 {
-                    labels[sor - 1, oszlop - 1].Text = GameField[sor, oszlop].ToString() == "0" ? " " : GameField[sor, oszlop].ToString();
+                    labels[sor - 1, oszlop - 1].Text = GameField[sor, oszlop] == 0 ? " " : GameField[sor, oszlop].ToString();
                 }
             }
         }
@@ -78,22 +78,26 @@ namespace _2048_WPF
         } 
         private void UpBtn_Click(object sender, EventArgs e)
         {
-            DoMove(0);
+            mve.Up();
+            Display();
         }
 
         private void LeftBtn_Click(object sender, EventArgs e)
         {
-            DoMove(3);
+            mve.Left();
+            Display();
         }
 
         private void RightBtn_Click(object sender, EventArgs e)
         {
-            DoMove(1);
+            mve.Right();
+            Display();
         }
 
         private void DownBtn_Click(object sender, EventArgs e)
         {
-            DoMove(2);
+            mve.Down();
+            Display();
         }
 
         private void SwitchToKbdBtn_Click(object sender, EventArgs e)
