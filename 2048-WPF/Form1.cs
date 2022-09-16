@@ -30,13 +30,14 @@ namespace _2048_WPF
         public Form1()
         {
             InitializeComponent();
-            FillTheMatrix();
+            //FillTheMatrix();
             labels = new Label[,]{
                 {l11,l12,l13,l14 },
                 {l21,l22,l23,l24 },
                 {l31,l32,l33,l34 },
                 {l41,l42,l43,l44 }
             };
+            Display();
         }
         private void Display()
         {
@@ -44,7 +45,7 @@ namespace _2048_WPF
             {
                 for (int oszlop = 1; oszlop < 5; oszlop++)
                 {
-                    labels[sor - 1, oszlop - 1].Text=GameField[sor,oszlop].ToString();
+                    labels[sor - 1, oszlop - 1].Text= GameField[sor, oszlop].ToString()=="0"?" ": GameField[sor, oszlop].ToString();
                 }
             }
         }
