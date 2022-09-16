@@ -45,20 +45,22 @@ namespace _2048_WPF
                         if (GameField[toX, toY] == 0)
                         {
                             //Következő lépés megtekintése
-                            CheckMove(oriGinalX, oriGinalY, dir, toX, toY++);
+                            CheckMove(oriGinalX, oriGinalY, dir, toX, toY--);
+                            break;
                         }
                         else if (GameField[toX, toY] == GameField[oriGinalX, oriGinalY])
                         {
                             //merge másik számmal
                             GameField[toX, toY] *= 2;
                             GameField[oriGinalX, oriGinalX] = 0;
+                            break;
                         }
                         else if (GameField[toX, toY] != 1 || GameField[toX, toY] != 0)
                         {
                             //ne csinálj semmit
                             break;
                         }
-                        break;
+                        else break;
                     case 1:
                         break;
                     case 2:
@@ -81,7 +83,7 @@ namespace _2048_WPF
             {
                 for (int g = 1; g < GameField.GetLength(1)-1; g++)
                 {
-                    CheckMove(i, g, direction, direction == 0 || direction == 2 ? 0 : direction == 1 ? 1 : -1, direction == 3 || direction == 1 ? 0 : direction == 0 ? -1 : 1);
+                    CheckMove(i, g, direction, direction == i || direction == 2 ? i : direction == 1 ? i+1 : i-1, direction == 3 || direction == 1 ? g : direction == 0 ? g-1 : g+1);
                 }
             }
         }
