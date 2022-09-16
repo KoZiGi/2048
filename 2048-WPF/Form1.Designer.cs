@@ -34,22 +34,22 @@ namespace _2048_WPF
             this.DownBtn = new System.Windows.Forms.Button();
             this.RightBtn = new System.Windows.Forms.Button();
             this.LeftBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.l11 = new System.Windows.Forms.Label();
+            this.l12 = new System.Windows.Forms.Label();
+            this.l13 = new System.Windows.Forms.Label();
+            this.l14 = new System.Windows.Forms.Label();
+            this.l24 = new System.Windows.Forms.Label();
+            this.l23 = new System.Windows.Forms.Label();
+            this.l22 = new System.Windows.Forms.Label();
+            this.l21 = new System.Windows.Forms.Label();
+            this.l43 = new System.Windows.Forms.Label();
+            this.l32 = new System.Windows.Forms.Label();
+            this.l31 = new System.Windows.Forms.Label();
+            this.l34 = new System.Windows.Forms.Label();
+            this.l33 = new System.Windows.Forms.Label();
+            this.l42 = new System.Windows.Forms.Label();
+            this.l41 = new System.Windows.Forms.Label();
+            this.l44 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UpBtn
@@ -107,155 +107,171 @@ namespace _2048_WPF
             this.LeftBtn.UseVisualStyleBackColor = true;
             this.LeftBtn.Click += new System.EventHandler(this.LeftBtn_Click);
             // 
-            // label1
+            // l11
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(12, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 50);
-            this.label1.TabIndex = 2;
+            this.l11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l11.Location = new System.Drawing.Point(12, 22);
+            this.l11.Name = "l11";
+            this.l11.Size = new System.Drawing.Size(50, 50);
+            this.l11.TabIndex = 2;
+            this.l11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // l12
             // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(68, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 50);
-            this.label2.TabIndex = 3;
+            this.l12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l12.Location = new System.Drawing.Point(68, 22);
+            this.l12.Name = "l12";
+            this.l12.Size = new System.Drawing.Size(50, 50);
+            this.l12.TabIndex = 3;
+            this.l12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // l13
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(124, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 50);
-            this.label3.TabIndex = 4;
+            this.l13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l13.Location = new System.Drawing.Point(124, 22);
+            this.l13.Name = "l13";
+            this.l13.Size = new System.Drawing.Size(50, 50);
+            this.l13.TabIndex = 4;
+            this.l13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // l14
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(180, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 50);
-            this.label4.TabIndex = 5;
+            this.l14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l14.Location = new System.Drawing.Point(180, 22);
+            this.l14.Name = "l14";
+            this.l14.Size = new System.Drawing.Size(50, 50);
+            this.l14.TabIndex = 5;
+            this.l14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // l24
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(180, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 50);
-            this.label5.TabIndex = 9;
+            this.l24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l24.Location = new System.Drawing.Point(180, 79);
+            this.l24.Name = "l24";
+            this.l24.Size = new System.Drawing.Size(50, 50);
+            this.l24.TabIndex = 9;
+            this.l24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // l23
             // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(124, 79);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 50);
-            this.label6.TabIndex = 8;
+            this.l23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l23.Location = new System.Drawing.Point(124, 79);
+            this.l23.Name = "l23";
+            this.l23.Size = new System.Drawing.Size(50, 50);
+            this.l23.TabIndex = 8;
+            this.l23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // l22
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(68, 79);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 50);
-            this.label7.TabIndex = 7;
+            this.l22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l22.Location = new System.Drawing.Point(68, 79);
+            this.l22.Name = "l22";
+            this.l22.Size = new System.Drawing.Size(50, 50);
+            this.l22.TabIndex = 7;
+            this.l22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // l21
             // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(12, 79);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 50);
-            this.label8.TabIndex = 6;
+            this.l21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l21.Location = new System.Drawing.Point(12, 79);
+            this.l21.Name = "l21";
+            this.l21.Size = new System.Drawing.Size(50, 50);
+            this.l21.TabIndex = 6;
+            this.l21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // l43
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(180, 200);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 50);
-            this.label9.TabIndex = 13;
+            this.l43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l43.Location = new System.Drawing.Point(124, 200);
+            this.l43.Name = "l43";
+            this.l43.Size = new System.Drawing.Size(50, 50);
+            this.l43.TabIndex = 12;
+            this.l43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // l32
             // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(124, 200);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 50);
-            this.label10.TabIndex = 12;
+            this.l32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l32.Location = new System.Drawing.Point(68, 138);
+            this.l32.Name = "l32";
+            this.l32.Size = new System.Drawing.Size(50, 50);
+            this.l32.TabIndex = 11;
+            this.l32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // l31
             // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(68, 138);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 50);
-            this.label11.TabIndex = 11;
+            this.l31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l31.Location = new System.Drawing.Point(12, 138);
+            this.l31.Name = "l31";
+            this.l31.Size = new System.Drawing.Size(50, 50);
+            this.l31.TabIndex = 10;
+            this.l31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // l34
             // 
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(12, 138);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 50);
-            this.label12.TabIndex = 10;
+            this.l34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l34.Location = new System.Drawing.Point(180, 138);
+            this.l34.Name = "l34";
+            this.l34.Size = new System.Drawing.Size(50, 50);
+            this.l34.TabIndex = 17;
+            this.l34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // l33
             // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(180, 138);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 50);
-            this.label13.TabIndex = 17;
+            this.l33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l33.Location = new System.Drawing.Point(124, 138);
+            this.l33.Name = "l33";
+            this.l33.Size = new System.Drawing.Size(50, 50);
+            this.l33.TabIndex = 16;
+            this.l33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // l42
             // 
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(124, 138);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 50);
-            this.label14.TabIndex = 16;
+            this.l42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l42.Location = new System.Drawing.Point(68, 200);
+            this.l42.Name = "l42";
+            this.l42.Size = new System.Drawing.Size(50, 50);
+            this.l42.TabIndex = 15;
+            this.l42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // l41
             // 
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(68, 200);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 50);
-            this.label15.TabIndex = 15;
+            this.l41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l41.Location = new System.Drawing.Point(12, 200);
+            this.l41.Name = "l41";
+            this.l41.Size = new System.Drawing.Size(50, 50);
+            this.l41.TabIndex = 14;
+            this.l41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // l44
             // 
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(12, 200);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(50, 50);
-            this.label16.TabIndex = 14;
+            this.l44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l44.Location = new System.Drawing.Point(180, 200);
+            this.l44.Name = "l44";
+            this.l44.Size = new System.Drawing.Size(50, 50);
+            this.l44.TabIndex = 18;
+            this.l44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(246, 442);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.l44);
+            this.Controls.Add(this.l34);
+            this.Controls.Add(this.l33);
+            this.Controls.Add(this.l42);
+            this.Controls.Add(this.l41);
+            this.Controls.Add(this.l43);
+            this.Controls.Add(this.l32);
+            this.Controls.Add(this.l31);
+            this.Controls.Add(this.l24);
+            this.Controls.Add(this.l23);
+            this.Controls.Add(this.l22);
+            this.Controls.Add(this.l21);
+            this.Controls.Add(this.l14);
+            this.Controls.Add(this.l13);
+            this.Controls.Add(this.l12);
+            this.Controls.Add(this.l11);
             this.Controls.Add(this.LeftBtn);
             this.Controls.Add(this.RightBtn);
             this.Controls.Add(this.DownBtn);
@@ -273,22 +289,22 @@ namespace _2048_WPF
         private System.Windows.Forms.Button DownBtn;
         private System.Windows.Forms.Button RightBtn;
         private System.Windows.Forms.Button LeftBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label l11;
+        private System.Windows.Forms.Label l12;
+        private System.Windows.Forms.Label l13;
+        private System.Windows.Forms.Label l14;
+        private System.Windows.Forms.Label l24;
+        private System.Windows.Forms.Label l23;
+        private System.Windows.Forms.Label l22;
+        private System.Windows.Forms.Label l21;
+        private System.Windows.Forms.Label l43;
+        private System.Windows.Forms.Label l32;
+        private System.Windows.Forms.Label l31;
+        private System.Windows.Forms.Label l34;
+        private System.Windows.Forms.Label l33;
+        private System.Windows.Forms.Label l42;
+        private System.Windows.Forms.Label l41;
+        private System.Windows.Forms.Label l44;
     }
 }
 
