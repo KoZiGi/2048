@@ -13,7 +13,7 @@ namespace _2048_WPF
 {
     public partial class Form1 : Form
     {
-        public int[,] GameField =
+        public static int[,] GameField =
         {
             {1,1,1,1,1,1 },
             {1,2,0,0,0,1 },
@@ -45,7 +45,7 @@ namespace _2048_WPF
             {
                 for (int oszlop = 1; oszlop < 5; oszlop++)
                 {
-                    labels[sor - 1, oszlop - 1].Text= GameField[sor, oszlop].ToString()=="0"?" ": GameField[sor, oszlop].ToString();
+                    labels[sor - 1, oszlop - 1].Text = GameField[sor, oszlop].ToString() == "0" ? " " : GameField[sor, oszlop].ToString();
                 }
             }
         }
