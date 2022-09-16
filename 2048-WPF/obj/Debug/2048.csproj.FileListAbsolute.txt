@@ -19,3 +19,4 @@ C:\Users\zickbalazs\Source\Repos\2048\2048-WPF\obj\Debug\2048.csproj.CoreCompile
 C:\Users\zickbalazs\Source\Repos\2048\2048-WPF\obj\Debug\2048-WPF.exe
 C:\Users\zickbalazs\Source\Repos\2048\2048-WPF\obj\Debug\2048-WPF.pdb
 C:\Users\zickbalazs\Source\Repos\2048\2048-WPF\obj\Debug\_2048_WPF.HighScoreDialog.resources
+C:\Users\ginalzsolt\Source\Repos\KoZiGi\2048\2048-WPF\obj\Debug\_2048_WPF.HighScoreDialog.resources

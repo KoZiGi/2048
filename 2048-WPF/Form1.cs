@@ -24,19 +24,20 @@ namespace _2048_WPF
         };
         
         public bool WASD = false;
-        public Panel[,] panels;
+        public Label[,] labels;
         
         public int moves = 0;
         public Form1()
         {
             InitializeComponent();
-            FillTheMatrix();
-           /* panels = new Panel[,]{
-                { p11,p12,p13,p14 },
-                { p21,p22,p23,p24 },
-                { p31,p32,p33,p34 },
-                { p41,p42,p43,p44 }
-            }; */
+            //FillTheMatrix();
+            labels = new Label[,]{
+                {l11,l12,l13,l14 },
+                {l21,l22,l23,l24 },
+                {l31,l32,l33,l34 },
+                {l41,l42,l43,l44 }
+            };
+            Display();
         }
         private void Display()
         {
@@ -44,7 +45,7 @@ namespace _2048_WPF
             {
                 for (int oszlop = 1; oszlop < 5; oszlop++)
                 {
-                    //panels[sor - 1, oszlop - 1];
+                    labels[sor - 1, oszlop - 1].Text= GameField[sor, oszlop].ToString()=="0"?" ": GameField[sor, oszlop].ToString();
                 }
             }
         }
@@ -178,5 +179,7 @@ namespace _2048_WPF
                 }
             }
         }
+
+        
     }
 }
