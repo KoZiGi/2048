@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace _2048_WPF
 {
     class Mve
     {
         private static int[,] Matrix;
+        private static int fs = 4;
+        private static int mc = 0;
         public Mve(int[,] m) {
             Matrix = m;
         }
@@ -18,6 +20,7 @@ namespace _2048_WPF
         {
             for (int sor = 1; sor < 5; sor++)
             {
+                mc = 1;
                 for (int oszlop = 1; oszlop < 5; oszlop++)
                 {
                     MoveTo(sor, oszlop, 0);
@@ -60,12 +63,24 @@ namespace _2048_WPF
             {
                 if (dir == 0)
                 {
-                    if (Matrix[row - 1, col] == 0 || Matrix[row, col] == Matrix[row - 1, col])
+
+                    if (Matrix[row - 1, col] == 0 )
                     {
                         Matrix[row - 1, col] += Matrix[row, col];
                         Matrix[row, col] = 0;
                         MoveTo(row - 1, col, dir);
                     }
+
+
+                    if ( Matrix[row, col] == Matrix[row - 1, col]&&mc<Math.Floor(Convert.ToDouble(fs/2)))
+                    {
+                        Matrix[row - 1, col] += Matrix[row, col];
+                        Matrix[row, col] = 0;
+                        mc++;
+                        MoveTo(row - 1, col, dir);
+                    }
+
+
                 }
                 if (dir == 2)
                 {
