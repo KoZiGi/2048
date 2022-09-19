@@ -46,9 +46,9 @@ namespace _2048_WPF
         }
         public void Left()
         {
-            for (int oszlop = 1; oszlop > 5; oszlop++)
+            for (int oszlop = 1; oszlop < 5; oszlop++)
             {
-                for (int sor = 1; sor > 5; sor++)
+                for (int sor = 1; sor < 5; sor++)
                 {
                     MoveTo(sor, oszlop, 3);
                 }
