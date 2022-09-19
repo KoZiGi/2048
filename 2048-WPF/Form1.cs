@@ -16,10 +16,10 @@ namespace _2048_WPF
         public static int[,] GameField =
         {
             {1,1,1,1,1,1 },
-            {1,2,0,0,2,1 },
-            {1,2,0,0,0,1 },
-            {1,2,0,2,0,1 },
-            {1,2,2,0,0,1 },
+            {1,0,0,0,0,1 },
+            {1,0,0,0,0,1 },
+            {1,0,0,0,0,1 },
+            {1,0,0,0,0,1 },
             {1,1,1,1,1,1 }
         };
         public bool WASD = false;
@@ -36,6 +36,7 @@ namespace _2048_WPF
                 {l31,l32,l33,l34 },
                 {l41,l42,l43,l44 }
             };
+            Random2(0);
             mve = new Mve(GameField);
             Display();
         }
@@ -75,8 +76,20 @@ namespace _2048_WPF
                 case "128":
                     label.BackColor = Color.FromArgb(237, 207, 115);
                     break;
+                case "256":
+                    label.BackColor = Color.FromArgb(237, 204, 98);
+                    break;
+                case "512":
+                    label.BackColor = Color.FromArgb(237, 200, 80);
+                    break;
+                case "1024":
+                    label.BackColor = Color.FromArgb(237, 197, 63);
+                    break;
+                case "2048":
+                    label.BackColor = Color.FromArgb(237, 194, 45);
+                    break;
                 default:
-                    label.BackColor = Color.White;
+                    label.BackColor = Color.Silver;
                     break;
 
             }
@@ -86,6 +99,27 @@ namespace _2048_WPF
             for (int i = 0; i < 6; i++)
                 for (int j = 0; j < 6; j++)
                     GameField[i, j] = (i == 0 || i == 5 || j == 0 || j == 5) ? 1 : 0;
+        }
+        private void Random2(int count)
+        {
+            if (count == 3)
+            {
+                return;
+            }
+            else
+            {
+                Random x = new Random(), y = new Random();
+                int X = x.Next(1,5), Y = y.Next(1, 5);
+                if (GameField[X, Y] == 0)
+                {
+                    GameField[X,Y] = x.Next(1,3) == 1 ? 2 : 4;
+                    Random2(count+1);
+                }
+                else
+                {
+                    Random2(count+1);
+                }
+            }
         }
         private void CreateHighScores()
         {
@@ -111,24 +145,28 @@ namespace _2048_WPF
         private void UpBtn_Click(object sender, EventArgs e)
         {
             mve.Up();
+            Random2(0);
             Display();
         }
 
         private void LeftBtn_Click(object sender, EventArgs e)
         {
             mve.Left();
+            Random2(0);
             Display();
         }
 
         private void RightBtn_Click(object sender, EventArgs e)
         {
             mve.Right();
+            Random2(0);
             Display();
         }
 
         private void DownBtn_Click(object sender, EventArgs e)
         {
             mve.Down();
+            Random2(0);
             Display();
         }
 
@@ -161,18 +199,22 @@ namespace _2048_WPF
                 {
                     case "W":
                         mve.Up();
+                        Random2(0);
                         Display();
                         break;
                     case "A":
                         mve.Left();
+                        Random2(0);
                         Display();
                         break;
                     case "S":
                         mve.Down();
+                        Random2(0);
                         Display();
                         break;
                     case "D":
                         mve.Right();
+                        Random2(0);
                         Display();
                         break;
                 }

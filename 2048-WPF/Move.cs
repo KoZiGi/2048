@@ -20,9 +20,9 @@ namespace _2048_WPF
         {
             for (int sor = 1; sor < 5; sor++)
             {
-                mc = 1;
                 for (int oszlop = 1; oszlop < 5; oszlop++)
                 {
+                    mc = 1;
                     MoveTo(sor, oszlop, 0);
                 }
             }
@@ -33,6 +33,7 @@ namespace _2048_WPF
             {
                 for (int sor = 4; sor > 0; sor--)
                 {
+                    mc = 1;
                     MoveTo(sor, oszlop, 1);
                 }
             }
@@ -43,6 +44,7 @@ namespace _2048_WPF
             {
                 for (int oszlop = 4; oszlop > 0; oszlop--)
                 {
+                    mc = 1;
                     MoveTo(sor, oszlop, 2);
                 }
             }
@@ -53,6 +55,7 @@ namespace _2048_WPF
             {
                 for (int sor = 1; sor < 5; sor++)
                 {
+                    mc = 1;
                     MoveTo(sor, oszlop, 3);
                 }
             }
@@ -72,7 +75,7 @@ namespace _2048_WPF
                     }
 
 
-                    if ( Matrix[row, col] == Matrix[row - 1, col]&&mc<Math.Floor(Convert.ToDouble(fs/2)))
+                    if (Matrix[row, col] == Matrix[row - 1, col]&&mc<Math.Floor(Convert.ToDouble(fs/2)))
                     {
                         Matrix[row - 1, col] += Matrix[row, col];
                         Matrix[row, col] = 0;
@@ -84,10 +87,17 @@ namespace _2048_WPF
                 }
                 if (dir == 2)
                 {
-                    if (Matrix[row + 1, col] == 0 || Matrix[row, col] == Matrix[row + 1, col])
+                    if (Matrix[row + 1, col] == 0)
                     {
                         Matrix[row + 1, col] += Matrix[row, col];
                         Matrix[row, col] = 0;
+                        MoveTo(row + 1, col, dir);
+                    }
+                    if (Matrix[row, col] == Matrix[row + 1, col]&&mc<Math.Floor(Convert.ToDouble(fs/2)))
+                    {
+                        Matrix[row + 1, col] += Matrix[row, col];
+                        Matrix[row, col] = 0;
+                        mc++;
                         MoveTo(row + 1, col, dir);
                     }
                 }
@@ -96,19 +106,33 @@ namespace _2048_WPF
             {
                 if (dir == 1)
                 {
-                    if (Matrix[row, col+1] == 0 || Matrix[row, col] == Matrix[row, col+1])
+                    if (Matrix[row, col+1] == 0)
                     {
                         Matrix[row, col+1] += Matrix[row, col];
                         Matrix[row, col] = 0;
                         MoveTo(row, col+1, dir);
                     }
+                    if (Matrix[row, col] == Matrix[row, col+1] && mc < Math.Floor(Convert.ToDouble(fs / 2)))
+                    {
+                        Matrix[row, col+1] += Matrix[row, col];
+                        Matrix[row, col] = 0;
+                        mc++;
+                        MoveTo(row, col+1, dir);
+                    }
                 }
                 if (dir == 3)
                 {
-                    if (Matrix[row, col-1] == 0 || Matrix[row, col] == Matrix[row, col-1])
+                    if (Matrix[row, col-1] == 0)
                     {
                         Matrix[row, col-1] += Matrix[row, col];
                         Matrix[row, col] = 0;
+                        MoveTo(row, col-1, dir);
+                    }
+                    if (Matrix[row, col] == Matrix[row, col-1] && mc < Math.Floor(Convert.ToDouble(fs / 2)))
+                    {
+                        Matrix[row, col-1] += Matrix[row, col];
+                        Matrix[row, col] = 0;
+                        mc++;
                         MoveTo(row, col-1, dir);
                     }
                 }
