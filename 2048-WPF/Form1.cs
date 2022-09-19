@@ -46,7 +46,39 @@ namespace _2048_WPF
                 for (int oszlop = 1; oszlop < 5; oszlop++)
                 {
                     labels[sor - 1, oszlop - 1].Text = GameField[sor, oszlop] == 0 ? " " : GameField[sor, oszlop].ToString();
+                    setcolor(labels[sor-1,oszlop-1]);
                 }
+            }
+        }
+        private void setcolor(Label label)
+        {
+            switch (label.Text)
+            {
+                case "2":
+                    label.BackColor = Color.FromArgb(238,228,218);
+                    break;
+                case "4":
+                    label.BackColor = Color.FromArgb(237, 224, 200);
+                    break;
+                case "8":
+                    label.BackColor = Color.FromArgb(242, 177, 121);
+                    break;
+                case "16":
+                    label.BackColor = Color.FromArgb(245, 149, 99);
+                    break;
+                case "32":
+                    label.BackColor = Color.FromArgb(246, 124, 96);
+                    break;
+                case "64":
+                    label.BackColor = Color.FromArgb(246, 94, 59);
+                    break;
+                case "128":
+                    label.BackColor = Color.FromArgb(237, 207, 115);
+                    break;
+                default:
+                    label.BackColor = Color.White;
+                    break;
+
             }
         }
         private void FillTheMatrix()
@@ -128,16 +160,20 @@ namespace _2048_WPF
                 switch (e.KeyChar.ToString().ToUpper())
                 {
                     case "W":
-                        DoMove(0);
+                        mve.Up();
+                        Display();
                         break;
                     case "A":
-                        DoMove(3);
+                        mve.Left();
+                        Display();
                         break;
                     case "S":
-                        DoMove(2);
+                        mve.Down();
+                        Display();
                         break;
                     case "D":
-                        DoMove(1);
+                        mve.Right();
+                        Display();
                         break;
                 }
             }
