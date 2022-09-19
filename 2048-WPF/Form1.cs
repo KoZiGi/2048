@@ -16,16 +16,15 @@ namespace _2048_WPF
         public static int[,] GameField =
         {
             {1,1,1,1,1,1 },
+            {1,2,0,0,2,1 },
             {1,2,0,0,0,1 },
-            {1,0,0,0,0,1 },
-            {1,2,0,0,0,1 },
-            {1,0,0,0,0,1 },
+            {1,2,0,2,0,1 },
+            {1,2,2,0,0,1 },
             {1,1,1,1,1,1 }
         };
-        
         public bool WASD = false;
         public Label[,] labels;
-        
+        Mve mve;
         public int moves = 0;
         public Form1()
         {
@@ -37,6 +36,7 @@ namespace _2048_WPF
                 {l31,l32,l33,l34 },
                 {l41,l42,l43,l44 }
             };
+            mve = new Mve(GameField);
             Display();
         }
         private void Display()
@@ -45,7 +45,7 @@ namespace _2048_WPF
             {
                 for (int oszlop = 1; oszlop < 5; oszlop++)
                 {
-                    labels[sor - 1, oszlop - 1].Text = GameField[sor, oszlop].ToString() == "0" ? " " : GameField[sor, oszlop].ToString();
+                    labels[sor - 1, oszlop - 1].Text = GameField[sor, oszlop] == 0 ? " " : GameField[sor, oszlop].ToString();
                 }
             }
         }
@@ -55,40 +55,6 @@ namespace _2048_WPF
                 for (int j = 0; j < 6; j++)
                     GameField[i, j] = (i == 0 || i == 5 || j == 0 || j == 5) ? 1 : 0;
         }
-        private void CheckMove(int oriGinalX, int oriGinalY, int dir, int toX, int toY)
-        {
-            if (GameField[oriGinalX, oriGinalY] != 0)
-            {
-                switch (dir)
-                {
-                    case 0:
-                        if (GameField[toX, toY] == 0)
-                        {
-                            //Következő lépés megtekintése
-                            CheckMove(oriGinalX, oriGinalY, dir, toX, toY++);
-                        }
-                        else if (GameField[toX, toY] == GameField[oriGinalX, oriGinalY])
-                        {
-                            //merge másik számmal
-                            GameField[toX, toY] *= 2;
-                            GameField[oriGinalX, oriGinalX] = 0;
-                        }
-                        else if (GameField[toX, toY] != 1 || GameField[toX, toY] != 0)
-                        {
-                            //ne csinálj semmit
-                            break;
-                        }
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-
-                }
-            }
-        }
         private void CreateHighScores()
         {
             HighScoreDialog hs = new HighScoreDialog(moves);
@@ -97,13 +63,6 @@ namespace _2048_WPF
         private void DoMove(int direction)
         {
 
-            for (int i = 1; i < GameField.GetLength(0)-1; i++)
-            {
-                for (int g = 1; g < GameField.GetLength(1)-1; g++)
-                {
-                    CheckMove(i, g, direction, direction == 0 || direction == 2 ? 0 : direction == 1 ? 1 : -1, direction == 3 || direction == 1 ? 0 : direction == 0 ? -1 : 1);
-                }
-            }
         }
         private int[,] Randomize()
         {
@@ -119,22 +78,26 @@ namespace _2048_WPF
         } 
         private void UpBtn_Click(object sender, EventArgs e)
         {
-            DoMove(0);
+            mve.Up();
+            Display();
         }
 
         private void LeftBtn_Click(object sender, EventArgs e)
         {
-            DoMove(3);
+            mve.Left();
+            Display();
         }
 
         private void RightBtn_Click(object sender, EventArgs e)
         {
-            DoMove(1);
+            mve.Right();
+            Display();
         }
 
         private void DownBtn_Click(object sender, EventArgs e)
         {
-            DoMove(2);
+            mve.Down();
+            Display();
         }
 
         private void SwitchToKbdBtn_Click(object sender, EventArgs e)
@@ -179,7 +142,5 @@ namespace _2048_WPF
                 }
             }
         }
-
-        
     }
 }
