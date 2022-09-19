@@ -102,7 +102,7 @@ namespace _2048_WPF
         }
         private void Random2(int count)
         {
-            if (count == 3)
+            if (count == 2)
             {
                 return;
             }
@@ -117,7 +117,7 @@ namespace _2048_WPF
                 }
                 else
                 {
-                    Random2(count+1);
+                    Random2(count);
                 }
             }
         }

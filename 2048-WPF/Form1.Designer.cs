@@ -110,6 +110,7 @@ namespace _2048_WPF
             // l11
             // 
             this.l11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l11.Location = new System.Drawing.Point(12, 22);
             this.l11.Name = "l11";
             this.l11.Size = new System.Drawing.Size(50, 50);
@@ -119,6 +120,7 @@ namespace _2048_WPF
             // l12
             // 
             this.l12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l12.Location = new System.Drawing.Point(68, 22);
             this.l12.Name = "l12";
             this.l12.Size = new System.Drawing.Size(50, 50);
@@ -128,6 +130,7 @@ namespace _2048_WPF
             // l13
             // 
             this.l13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l13.Location = new System.Drawing.Point(124, 22);
             this.l13.Name = "l13";
             this.l13.Size = new System.Drawing.Size(50, 50);
@@ -137,6 +140,7 @@ namespace _2048_WPF
             // l14
             // 
             this.l14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l14.Location = new System.Drawing.Point(180, 22);
             this.l14.Name = "l14";
             this.l14.Size = new System.Drawing.Size(50, 50);
@@ -146,6 +150,7 @@ namespace _2048_WPF
             // l24
             // 
             this.l24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l24.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l24.Location = new System.Drawing.Point(180, 79);
             this.l24.Name = "l24";
             this.l24.Size = new System.Drawing.Size(50, 50);
@@ -155,6 +160,7 @@ namespace _2048_WPF
             // l23
             // 
             this.l23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l23.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l23.Location = new System.Drawing.Point(124, 79);
             this.l23.Name = "l23";
             this.l23.Size = new System.Drawing.Size(50, 50);
@@ -164,6 +170,7 @@ namespace _2048_WPF
             // l22
             // 
             this.l22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l22.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l22.Location = new System.Drawing.Point(68, 79);
             this.l22.Name = "l22";
             this.l22.Size = new System.Drawing.Size(50, 50);
@@ -173,6 +180,7 @@ namespace _2048_WPF
             // l21
             // 
             this.l21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l21.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l21.Location = new System.Drawing.Point(12, 79);
             this.l21.Name = "l21";
             this.l21.Size = new System.Drawing.Size(50, 50);
@@ -182,6 +190,7 @@ namespace _2048_WPF
             // l43
             // 
             this.l43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l43.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l43.Location = new System.Drawing.Point(124, 200);
             this.l43.Name = "l43";
             this.l43.Size = new System.Drawing.Size(50, 50);
@@ -191,6 +200,7 @@ namespace _2048_WPF
             // l32
             // 
             this.l32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l32.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l32.Location = new System.Drawing.Point(68, 138);
             this.l32.Name = "l32";
             this.l32.Size = new System.Drawing.Size(50, 50);
@@ -200,6 +210,7 @@ namespace _2048_WPF
             // l31
             // 
             this.l31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l31.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l31.Location = new System.Drawing.Point(12, 138);
             this.l31.Name = "l31";
             this.l31.Size = new System.Drawing.Size(50, 50);
@@ -209,6 +220,7 @@ namespace _2048_WPF
             // l34
             // 
             this.l34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l34.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l34.Location = new System.Drawing.Point(180, 138);
             this.l34.Name = "l34";
             this.l34.Size = new System.Drawing.Size(50, 50);
@@ -218,6 +230,7 @@ namespace _2048_WPF
             // l33
             // 
             this.l33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l33.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l33.Location = new System.Drawing.Point(124, 138);
             this.l33.Name = "l33";
             this.l33.Size = new System.Drawing.Size(50, 50);
@@ -227,6 +240,7 @@ namespace _2048_WPF
             // l42
             // 
             this.l42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l42.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l42.Location = new System.Drawing.Point(68, 200);
             this.l42.Name = "l42";
             this.l42.Size = new System.Drawing.Size(50, 50);
@@ -236,6 +250,7 @@ namespace _2048_WPF
             // l41
             // 
             this.l41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l41.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l41.Location = new System.Drawing.Point(12, 200);
             this.l41.Name = "l41";
             this.l41.Size = new System.Drawing.Size(50, 50);
@@ -245,6 +260,7 @@ namespace _2048_WPF
             // l44
             // 
             this.l44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.l44.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l44.Location = new System.Drawing.Point(180, 200);
             this.l44.Name = "l44";
             this.l44.Size = new System.Drawing.Size(50, 50);
