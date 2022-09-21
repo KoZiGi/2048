@@ -11,16 +11,17 @@ namespace _2048_WPF
     class Mve
     {
         private static int[,] Matrix;
-        private static int fs = 4;
+        private static int fs;
         private static int mc = 0;
         public Mve(int[,] m) {
             Matrix = m;
+            fs = Matrix.GetLength(0);
         }
         public void Up()
         {
-            for (int sor = 1; sor < 5; sor++)
+            for (int sor = 1; sor < Matrix.GetLength(0)-1; sor++)
             {
-                for (int oszlop = 1; oszlop < 5; oszlop++)
+                for (int oszlop = 1; oszlop < Matrix.GetLength(1)-1; oszlop++)
                 {
                     mc = 1;
                     MoveTo(sor, oszlop, 0);
@@ -29,9 +30,9 @@ namespace _2048_WPF
         }
         public void Right()
         {
-            for (int oszlop = 4; oszlop > 0; oszlop--)
+            for (int oszlop = Matrix.GetLength(1)-2; oszlop > 0; oszlop--)
             {
-                for (int sor = 4; sor > 0; sor--)
+                for (int sor = Matrix.GetLength(0)-2; sor > 0; sor--)
                 {
                     mc = 1;
                     MoveTo(sor, oszlop, 1);
@@ -40,9 +41,9 @@ namespace _2048_WPF
         }
         public void Down()
         {
-            for (int sor = 4; sor > 0; sor--)
+            for (int sor = Matrix.GetLength(0)-2; sor > 0; sor--)
             {
-                for (int oszlop = 4; oszlop > 0; oszlop--)
+                for (int oszlop = Matrix.GetLength(1)-2; oszlop > 0; oszlop--)
                 {
                     mc = 1;
                     MoveTo(sor, oszlop, 2);
@@ -51,9 +52,9 @@ namespace _2048_WPF
         }
         public void Left()
         {
-            for (int oszlop = 1; oszlop < 5; oszlop++)
+            for (int oszlop = 1; oszlop < Matrix.GetLength(1)-1; oszlop++)
             {
-                for (int sor = 1; sor < 5; sor++)
+                for (int sor = 1; sor < Matrix.GetLength(0)-1; sor++)
                 {
                     mc = 1;
                     MoveTo(sor, oszlop, 3);
