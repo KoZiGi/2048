@@ -83,30 +83,6 @@ namespace _2048_WPF
                 for (int j = 0; j < GameField.GetLength(1); j++)
                     GameField[i, j] = (i == 0 || i == GameField.GetLength(0)-1 || j == 0 || j == GameField.GetLength(1)-1) ? 1 : 0;
         }
-        private void Random2(int count)
-        {
-            int gen = 0;
-            if (CanSpawn())
-            {
-                while (count != gen)
-                {
-                    Random x = new Random(), y = new Random();
-                    int X = x.Next(1, 5), Y = y.Next(1, 5);
-                    if (GameField[X, Y] == 0)
-                    {
-                        GameField[X, Y] = x.Next(1, 3) == 1 ? 2 : 4;
-                        gen += 1;
-                    }
-                }
-            }
-            else
-            {
-                if (CheckMovent())
-                {
-                    MessageBox.Show("Game over!");
-                }
-            }
-        }
         private bool CheckMovent()
         {
             for (int i = 1; i < GameField.GetLength(0)-1; i++)
@@ -132,6 +108,36 @@ namespace _2048_WPF
 			}
             return false;
         }
+        private void Random2(int count)
+        {
+            if (CanSpawn())
+            {
+                int gen = 0;
+                while (count != gen)
+                {
+                    Random x = new Random(), y = new Random();
+                    int X = x.Next(1, 5), Y = y.Next(1, 5);
+                    if (GameField[X, Y] == 0)
+                    {
+                        GameField[X, Y] = x.Next(1, 3) == 1 ? 2 : 4;
+                        gen += 1;
+                    }
+                }
+            }
+            else
+            {
+                if (CheckMovent())
+                {
+                    MessageBox.Show("mehu");
+                }
+            }
+        }
+        private void checkWin()
+        {
+            for (int i = 0; i < GameField.GetLength(0); i++) 
+                for (int j = 0; j < GameField.GetLength(0); j++) 
+                    if (GameField[i, j] == 2048) CreateHighScores();
+        }
         private void CreateHighScores()
         {
             HighScoreDialog hs = new HighScoreDialog(moves);
@@ -154,24 +160,28 @@ namespace _2048_WPF
             mve.Up();
             Random2(1);
             Display();
+            checkWin();
         }
         private void LeftBtn_Click(object sender, EventArgs e)
         {
             mve.Left();
             Random2(1);
             Display();
+            checkWin();
         }
         private void RightBtn_Click(object sender, EventArgs e)
         {
             mve.Right();
             Random2(1);
             Display();
+            checkWin();
         }
         private void DownBtn_Click(object sender, EventArgs e)
         {
             mve.Down();
             Random2(1);
             Display();
+            checkWin();
         }
         private void SwitchToKbdBtn_Click(object sender, EventArgs e)
         {
@@ -203,21 +213,25 @@ namespace _2048_WPF
                         mve.Up();
                         Random2(1);
                         Display();
+                        checkWin();
                         break;
                     case "A":
                         mve.Left();
                         Random2(1);
                         Display();
+                        checkWin();
                         break;
                     case "S":
                         mve.Down();
                         Random2(1);
                         Display();
+                        checkWin();
                         break;
                     case "D":
                         mve.Right();
                         Random2(1);
                         Display();
+                        checkWin();
                         break;
                 }
             }
