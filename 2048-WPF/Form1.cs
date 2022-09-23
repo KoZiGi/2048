@@ -18,6 +18,7 @@ namespace _2048_WPF
         public Label[,] labels= new Label[1,1];
         Mve mve;
         public int moves = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -97,6 +98,12 @@ namespace _2048_WPF
                 }
             }
         }
+        private void checkWin()
+        {
+            for (int i = 0; i < GameField.GetLength(0); i++) 
+                for (int j = 0; j < GameField.GetLength(0); j++) 
+                    if (GameField[i, j] == 2048) CreateHighScores();
+        }
         private void CreateHighScores()
         {
             HighScoreDialog hs = new HighScoreDialog(moves);
@@ -119,24 +126,28 @@ namespace _2048_WPF
             mve.Up();
             Random2(1);
             Display();
+            checkWin();
         }
         private void LeftBtn_Click(object sender, EventArgs e)
         {
             mve.Left();
             Random2(1);
             Display();
+            checkWin();
         }
         private void RightBtn_Click(object sender, EventArgs e)
         {
             mve.Right();
             Random2(1);
             Display();
+            checkWin();
         }
         private void DownBtn_Click(object sender, EventArgs e)
         {
             mve.Down();
             Random2(1);
             Display();
+            checkWin();
         }
         private void SwitchToKbdBtn_Click(object sender, EventArgs e)
         {
@@ -168,21 +179,25 @@ namespace _2048_WPF
                         mve.Up();
                         Random2(1);
                         Display();
+                        checkWin();
                         break;
                     case "A":
                         mve.Left();
                         Random2(1);
                         Display();
+                        checkWin();
                         break;
                     case "S":
                         mve.Down();
                         Random2(1);
                         Display();
+                        checkWin();
                         break;
                     case "D":
                         mve.Right();
                         Random2(1);
                         Display();
+                        checkWin();
                         break;
                 }
             }
