@@ -17,11 +17,11 @@ namespace _2048_WPF
         public bool WASD = false;
         public Label[,] labels= new Label[1,1];
         Mve mve;
-        public int moves = 0;
+        public static int moves = 0;
+        public bool completed = false;
         public Form1()
         {
             InitializeComponent();
-            
             mve = new Mve(GameField);
         }
         private void Display()
@@ -86,16 +86,51 @@ namespace _2048_WPF
         private void Random2(int count)
         {
             int gen = 0;
-            while (count != gen)
+            if (CanSpawn())
             {
-                Random x = new Random(), y = new Random();
-                int X = x.Next(1, 5), Y = y.Next(1, 5);
-                if (GameField[X, Y] == 0)
+                while (count != gen)
                 {
-                    GameField[X, Y] = x.Next(1, 3) == 1 ? 2 : 4;
-                    gen += 1;
+                    Random x = new Random(), y = new Random();
+                    int X = x.Next(1, 5), Y = y.Next(1, 5);
+                    if (GameField[X, Y] == 0)
+                    {
+                        GameField[X, Y] = x.Next(1, 3) == 1 ? 2 : 4;
+                        gen += 1;
+                    }
                 }
             }
+            else
+            {
+                if (CheckMovent())
+                {
+                    MessageBox.Show("Game over!");
+                }
+            }
+        }
+        private bool CheckMovent()
+        {
+            for (int i = 1; i < GameField.GetLength(0)-1; i++)
+			{
+                for (int g = 1; g < GameField.GetLength(1)-1; g++)
+			    {
+                    if (GameField[i,g]==GameField[i+1,g] || GameField[i,g]==GameField[i-1,g] || GameField[i,g]==GameField[i,g-1] || GameField[i,g]==GameField[i,g+1])
+                    {
+                        return false;
+                    }
+			    }   
+			}
+            return true;
+        }
+        private bool CanSpawn()
+        {
+            for (int i = 0; i < GameField.GetLength(0); i++)
+			{
+                for (int g = 0; g < GameField.GetLength(1); g++)
+    			{
+                    if (GameField[i,g]==0) return true;
+		    	}
+			}
+            return false;
         }
         private void CreateHighScores()
         {
@@ -209,7 +244,7 @@ namespace _2048_WPF
                         Left = oszlop * 50,
                         BorderStyle = BorderStyle.FixedSingle
                     };
-                    this.Controls.Add(labels[sor, oszlop]);
+                    Controls.Add(labels[sor, oszlop]);
                 }
             }
             Random2(2);
