@@ -29,7 +29,7 @@ namespace _2048_WPF
         public Form1()
         {
             InitializeComponent();
-            //FillTheMatrix();
+            FillTheMatrix();
             labels = new Label[,]{
                 {l11,l12,l13,l14 },
                 {l21,l22,l23,l24 },
