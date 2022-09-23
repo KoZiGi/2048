@@ -13,38 +13,22 @@ namespace _2048_WPF
 {
     public partial class Form1 : Form
     {
-        public static int[,] GameField =
-        {
-            {1,1,1,1,1,1 },
-            {1,0,0,0,0,1 },
-            {1,0,0,0,0,1 },
-            {1,0,0,0,0,1 },
-            {1,0,0,0,0,1 },
-            {1,1,1,1,1,1 }
-        };
+        public static int[,] GameField= new int[1,1];
         public bool WASD = false;
-        public Label[,] labels;
+        public Label[,] labels= new Label[1,1];
         Mve mve;
         public int moves = 0;
         public Form1()
         {
             InitializeComponent();
-            //FillTheMatrix();
-            labels = new Label[,]{
-                {l11,l12,l13,l14 },
-                {l21,l22,l23,l24 },
-                {l31,l32,l33,l34 },
-                {l41,l42,l43,l44 }
-            };
-            Random2(0);
+            
             mve = new Mve(GameField);
-            Display();
         }
         private void Display()
         {
-            for (int sor = 1; sor < 5; sor++)
+            for (int sor = 1; sor < GameField.GetLength(0)-1; sor++)
             {
-                for (int oszlop = 1; oszlop < 5; oszlop++)
+                for (int oszlop = 1; oszlop < GameField.GetLength(1)-1; oszlop++)
                 {
                     labels[sor - 1, oszlop - 1].Text = GameField[sor, oszlop] == 0 ? " " : GameField[sor, oszlop].ToString();
                     setcolor(labels[sor-1,oszlop-1]);
@@ -91,33 +75,25 @@ namespace _2048_WPF
                 default:
                     label.BackColor = Color.Silver;
                     break;
-
             }
         }
         private void FillTheMatrix()
         {
-            for (int i = 0; i < 6; i++)
-                for (int j = 0; j < 6; j++)
-                    GameField[i, j] = (i == 0 || i == 5 || j == 0 || j == 5) ? 1 : 0;
+            for (int i = 0; i < GameField.GetLength(0); i++)
+                for (int j = 0; j < GameField.GetLength(1); j++)
+                    GameField[i, j] = (i == 0 || i == GameField.GetLength(0)-1 || j == 0 || j == GameField.GetLength(1)-1) ? 1 : 0;
         }
         private void Random2(int count)
         {
-            if (count == 3)
-            {
-                return;
-            }
-            else
+            int gen = 0;
+            while (count != gen)
             {
                 Random x = new Random(), y = new Random();
-                int X = x.Next(1,5), Y = y.Next(1, 5);
+                int X = x.Next(1, 5), Y = y.Next(1, 5);
                 if (GameField[X, Y] == 0)
                 {
-                    GameField[X,Y] = x.Next(1,3) == 1 ? 2 : 4;
-                    Random2(count+1);
-                }
-                else
-                {
-                    Random2(count+1);
+                    GameField[X, Y] = x.Next(1, 3) == 1 ? 2 : 4;
+                    gen += 1;
                 }
             }
         }
@@ -125,10 +101,6 @@ namespace _2048_WPF
         {
             HighScoreDialog hs = new HighScoreDialog(moves);
             hs.Show();
-        }
-        private void DoMove(int direction)
-        {
-
         }
         private int[,] Randomize()
         {
@@ -145,31 +117,27 @@ namespace _2048_WPF
         private void UpBtn_Click(object sender, EventArgs e)
         {
             mve.Up();
-            Random2(0);
+            Random2(1);
             Display();
         }
-
         private void LeftBtn_Click(object sender, EventArgs e)
         {
             mve.Left();
-            Random2(0);
+            Random2(1);
             Display();
         }
-
         private void RightBtn_Click(object sender, EventArgs e)
         {
             mve.Right();
-            Random2(0);
+            Random2(1);
             Display();
         }
-
         private void DownBtn_Click(object sender, EventArgs e)
         {
             mve.Down();
-            Random2(0);
+            Random2(1);
             Display();
         }
-
         private void SwitchToKbdBtn_Click(object sender, EventArgs e)
         {
             if (UpBtn.Enabled==false)
@@ -189,7 +157,6 @@ namespace _2048_WPF
                 WASD = true;
             }
         }
-
         private void SwitchToKbdBtn_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (WASD)
@@ -199,26 +166,54 @@ namespace _2048_WPF
                 {
                     case "W":
                         mve.Up();
-                        Random2(0);
+                        Random2(1);
                         Display();
                         break;
                     case "A":
                         mve.Left();
-                        Random2(0);
+                        Random2(1);
                         Display();
                         break;
                     case "S":
                         mve.Down();
-                        Random2(0);
+                        Random2(1);
                         Display();
                         break;
                     case "D":
                         mve.Right();
-                        Random2(0);
+                        Random2(1);
                         Display();
                         break;
                 }
             }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Label l in labels)
+            {
+                Controls.Remove(l);
+            }
+            int number = Convert.ToInt32(numericUpDown1.Value);
+            GameField = new int[number + 2, number + 2];
+            FillTheMatrix();
+            mve = new Mve(GameField);
+            labels = new Label[number, number];
+            for (int sor= 0; sor< labels.GetLength(0); sor++)
+            {
+                for (int oszlop = 0; oszlop < labels.GetLength(1); oszlop++)
+                {
+                    labels[sor, oszlop] = new Label()
+                    {
+                        Size = new Size(50, 50),
+                        Top = sor* 50,
+                        Left = oszlop * 50,
+                        BorderStyle = BorderStyle.FixedSingle
+                    };
+                    this.Controls.Add(labels[sor, oszlop]);
+                }
+            }
+            Random2(2);
+            Display();
         }
     }
 }
