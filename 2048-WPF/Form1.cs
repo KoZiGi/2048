@@ -13,14 +13,15 @@ namespace _2048_WPF
 {
     public partial class Form1 : Form
     {
-        public static int[,] GameField;
+        public static int[,] GameField= new int[1,1];
         public bool WASD = false;
-        public Label[,] labels;
+        public Label[,] labels= new Label[1,1];
         Mve mve;
         public int moves = 0;
         public Form1()
         {
             InitializeComponent();
+            
             mve = new Mve(GameField);
         }
         private void Display()
@@ -80,26 +81,19 @@ namespace _2048_WPF
         {
             for (int i = 0; i < GameField.GetLength(0); i++)
                 for (int j = 0; j < GameField.GetLength(1); j++)
-                    GameField[i, j] = (i == 0 || i == GameField.GetLength(0) || j == 0 || j == GameField.GetLength(1)) ? 1 : 0;
+                    GameField[i, j] = (i == 0 || i == GameField.GetLength(0)-1 || j == 0 || j == GameField.GetLength(1)-1) ? 1 : 0;
         }
         private void Random2(int count)
         {
-            if (count == 2)
-            {
-                return;
-            }
-            else
+            int gen = 0;
+            while (count != gen)
             {
                 Random x = new Random(), y = new Random();
-                int X = x.Next(1,5), Y = y.Next(1, 5);
+                int X = x.Next(1, 5), Y = y.Next(1, 5);
                 if (GameField[X, Y] == 0)
                 {
-                    GameField[X,Y] = x.Next(1,3) == 1 ? 2 : 4;
-                    Random2(count+1);
-                }
-                else
-                {
-                    Random2(count+1);
+                    GameField[X, Y] = x.Next(1, 3) == 1 ? 2 : 4;
+                    gen += 1;
                 }
             }
         }
@@ -107,10 +101,6 @@ namespace _2048_WPF
         {
             HighScoreDialog hs = new HighScoreDialog(moves);
             hs.Show();
-        }
-        private void DoMove(int direction)
-        {
-
         }
         private int[,] Randomize()
         {
@@ -127,31 +117,27 @@ namespace _2048_WPF
         private void UpBtn_Click(object sender, EventArgs e)
         {
             mve.Up();
-            Random2(0);
+            Random2(1);
             Display();
         }
-
         private void LeftBtn_Click(object sender, EventArgs e)
         {
             mve.Left();
-            Random2(0);
+            Random2(1);
             Display();
         }
-
         private void RightBtn_Click(object sender, EventArgs e)
         {
             mve.Right();
-            Random2(0);
+            Random2(1);
             Display();
         }
-
         private void DownBtn_Click(object sender, EventArgs e)
         {
             mve.Down();
-            Random2(0);
+            Random2(1);
             Display();
         }
-
         private void SwitchToKbdBtn_Click(object sender, EventArgs e)
         {
             if (UpBtn.Enabled==false)
@@ -171,7 +157,6 @@ namespace _2048_WPF
                 WASD = true;
             }
         }
-
         private void SwitchToKbdBtn_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (WASD)
@@ -181,22 +166,22 @@ namespace _2048_WPF
                 {
                     case "W":
                         mve.Up();
-                        Random2(0);
+                        Random2(1);
                         Display();
                         break;
                     case "A":
                         mve.Left();
-                        Random2(0);
+                        Random2(1);
                         Display();
                         break;
                     case "S":
                         mve.Down();
-                        Random2(0);
+                        Random2(1);
                         Display();
                         break;
                     case "D":
                         mve.Right();
-                        Random2(0);
+                        Random2(1);
                         Display();
                         break;
                 }
@@ -204,26 +189,30 @@ namespace _2048_WPF
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (Label l in labels)
+            {
+                Controls.Remove(l);
+            }
             int number = Convert.ToInt32(numericUpDown1.Value);
             GameField = new int[number + 2, number + 2];
             FillTheMatrix();
+            mve = new Mve(GameField);
             labels = new Label[number, number];
-            Random2(0);
-            for (int i = 0; i < labels.GetLength(0); i++)
+            for (int sor= 0; sor< labels.GetLength(0); sor++)
             {
-                for (int g = 0; g < labels.GetLength(1); g++)
+                for (int oszlop = 0; oszlop < labels.GetLength(1); oszlop++)
                 {
-                    labels[i, g] = new Label()
+                    labels[sor, oszlop] = new Label()
                     {
                         Size = new Size(50, 50),
-                        Top = i* 50,
-                        Margin = new Padding(10,10,10,10),
-                        Left = g * 50,
+                        Top = sor* 50,
+                        Left = oszlop * 50,
                         BorderStyle = BorderStyle.FixedSingle
                     };
-                    this.Controls.Add(labels[i, g]);
+                    this.Controls.Add(labels[sor, oszlop]);
                 }
             }
+            Random2(2);
             Display();
         }
     }
