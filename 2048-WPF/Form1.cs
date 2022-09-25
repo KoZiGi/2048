@@ -13,16 +13,15 @@ namespace _2048_WPF
 {
     public partial class Form1 : Form
     {
-        public static int[,] GameField= new int[1,1];
+        public static int[,] GameField;
         public bool WASD = false;
-        public Label[,] labels= new Label[1,1];
-        Mve mve;
+        public Label[,] labels;
+        private static Mve mve;
         public static int moves = 0;
         public bool completed = false;
         public Form1()
         {
             InitializeComponent();
-            mve = new Mve(GameField);
         }
         private void Display()
         {
@@ -83,7 +82,7 @@ namespace _2048_WPF
                 for (int j = 0; j < GameField.GetLength(1); j++)
                     GameField[i, j] = (i == 0 || i == GameField.GetLength(0)-1 || j == 0 || j == GameField.GetLength(1)-1) ? 1 : 0;
         }
-        private bool CheckMovent()
+        private static bool CheckMovent()
         {
             for (int i = 1; i < GameField.GetLength(0)-1; i++)
 			{
@@ -97,7 +96,7 @@ namespace _2048_WPF
 			}
             return true;
         }
-        private bool CanSpawn()
+        private static bool CanSpawn()
         {
             for (int i = 0; i < GameField.GetLength(0); i++)
 			{
@@ -108,7 +107,7 @@ namespace _2048_WPF
 			}
             return false;
         }
-        private void Random2(int count)
+        public static void Random2(int count)
         {
             if (CanSpawn())
             {
@@ -143,43 +142,27 @@ namespace _2048_WPF
             HighScoreDialog hs = new HighScoreDialog(moves);
             hs.Show();
         }
-        private int[,] Randomize()
-        {
-            int[,] tempfield = GameField;
-            Random x = new Random(), y = new Random();
-            int X = x.Next(1, tempfield.GetLength(0) - 1), Y = y.Next(1, tempfield.GetLength(1) - 1);
-            if (tempfield[X, Y] == 0)
-            {
-                tempfield[X, Y] = x.Next(0, 1) == 0 ? 2 : 4;
-                return tempfield;
-            }
-            else return Randomize();
-        } 
         private void UpBtn_Click(object sender, EventArgs e)
         {
             mve.Up();
-            Random2(1);
             Display();
             checkWin();
         }
         private void LeftBtn_Click(object sender, EventArgs e)
         {
             mve.Left();
-            Random2(1);
             Display();
             checkWin();
         }
         private void RightBtn_Click(object sender, EventArgs e)
         {
             mve.Right();
-            Random2(1);
             Display();
             checkWin();
         }
         private void DownBtn_Click(object sender, EventArgs e)
         {
             mve.Down();
-            Random2(1);
             Display();
             checkWin();
         }
@@ -211,25 +194,21 @@ namespace _2048_WPF
                 {
                     case "W":
                         mve.Up();
-                        Random2(1);
                         Display();
                         checkWin();
                         break;
                     case "A":
                         mve.Left();
-                        Random2(1);
                         Display();
                         checkWin();
                         break;
                     case "S":
                         mve.Down();
-                        Random2(1);
                         Display();
                         checkWin();
                         break;
                     case "D":
                         mve.Right();
-                        Random2(1);
                         Display();
                         checkWin();
                         break;
@@ -240,31 +219,63 @@ namespace _2048_WPF
         {
             numericUpDown1.Visible = false;
             button1.Visible = false;
-            foreach (Label l in labels)
-            {
-                Controls.Remove(l);
-            }
+            label1.Visible = false;
             int number = Convert.ToInt32(numericUpDown1.Value);
-            GameField = new int[number + 2, number + 2];
-            FillTheMatrix();
-            mve = new Mve(GameField);
+
             labels = new Label[number, number];
+            GameField = new int[number + 2, number + 2];
+            
+            FillTheMatrix();
+            Random2(2);
+
             for (int sor= 0; sor< labels.GetLength(0); sor++)
             {
                 for (int oszlop = 0; oszlop < labels.GetLength(1); oszlop++)
                 {
                     labels[sor, oszlop] = new Label()
                     {
+                        TextAlign = ContentAlignment.MiddleCenter,
                         Size = new Size(50, 50),
-                        Top = sor* 50,
+                        Top = sor  * 50,
+                        Font = new Font("Arial", 16, FontStyle.Bold),
                         Left = oszlop * 50,
                         BorderStyle = BorderStyle.FixedSingle
                     };
                     Controls.Add(labels[sor, oszlop]);
                 }
             }
-            Random2(2);
+
+            SetPositions();
+            
+            mve = new Mve(GameField);
             Display();
+        }
+        private void SetPositions()
+        {
+            Width = (GameField.GetLength(0) - 2) * 50 + 15;
+
+            UpBtn.Top = (GameField.GetLength(0) - 2) * 50;
+            UpBtn.Left = (Width / 2) - 25;
+
+            SwitchToKbdBtn.Top = (GameField.GetLength(0) - 2) * 50 + SwitchToKbdBtn.Height;
+            SwitchToKbdBtn.Left = (Width / 2) - 25;
+
+            DownBtn.Top = (GameField.GetLength(0) - 2) * 50 + DownBtn.Height * 2;
+            DownBtn.Left = Width/2-25;
+
+            LeftBtn.Top = (GameField.GetLength(0) - 2) * 50 + LeftBtn.Height;
+            LeftBtn.Left = (Width / 2 - 25) - LeftBtn.Width;
+
+            RightBtn.Top = (GameField.GetLength(0) - 2) * 50 + RightBtn.Height;
+            RightBtn.Left = (Width / 2 - 25) + RightBtn.Width;
+
+            Height = DownBtn.Top + DownBtn.Height*2;
+
+            UpBtn.Visible = true;
+            DownBtn.Visible = true;
+            LeftBtn.Visible = true;
+            RightBtn.Visible = true;
+            SwitchToKbdBtn.Visible = true;
         }
     }
 }

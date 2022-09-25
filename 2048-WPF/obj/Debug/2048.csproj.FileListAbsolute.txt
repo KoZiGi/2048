@@ -32,3 +32,15 @@ C:\Users\Zsolt\Desktop\2048\2048-WPF\obj\Debug\2048.csproj.GenerateResource.cach
 C:\Users\Zsolt\Desktop\2048\2048-WPF\obj\Debug\2048.csproj.CoreCompileInputs.cache
 C:\Users\Zsolt\Desktop\2048\2048-WPF\obj\Debug\2048-WPF.exe
 C:\Users\Zsolt\Desktop\2048\2048-WPF\obj\Debug\2048-WPF.pdb
+C:\Users\Zick\Source\Repos\2048\2048-WPF\bin\Debug\2048-WPF.exe.config
+C:\Users\Zick\Source\Repos\2048\2048-WPF\bin\Debug\2048-WPF.exe
+C:\Users\Zick\Source\Repos\2048\2048-WPF\bin\Debug\2048-WPF.pdb
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\2048.csproj.AssemblyReference.cache
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\2048.csproj.SuggestedBindingRedirects.cache
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\_2048_WPF.Form1.resources
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\_2048_WPF.HighScoreDialog.resources
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\_2048_WPF.Properties.Resources.resources
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\2048.csproj.GenerateResource.cache
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\2048.csproj.CoreCompileInputs.cache
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\2048-WPF.exe
+C:\Users\Zick\Source\Repos\2048\2048-WPF\obj\Debug\2048-WPF.pdb

@@ -10,29 +10,40 @@ namespace _2048_WPF
 {
     class Mve
     {
-        private static int[,] Matrix= new int[1,1];
+        private static int[,] Matrix;
         private static int fs;
         private static int palyameret;
         private static int mc = 0;
-        private static int[,] TempMatrix = new int[1,1];
+        public static int[,] TempMatrix;
         public Mve(int[,] m) {
             Matrix = m;
             palyameret = Matrix.GetLength(0);
             fs = palyameret-2;
-            TempMatrix = Matrix;
+            TempMatrix = new int[palyameret, palyameret];
+            MirrorMatrix();
+        }
+        private void MirrorMatrix()
+        {
+            for (int i = 0; i < Matrix.GetLength(0); i++)
+            {
+                for (int g = 0; g < Matrix.GetLength(0); g++)
+                {
+                    TempMatrix[i,g] = Matrix[i,g];
+                }
+            }
+        }
+        private void Check()
+        {
+            if (!CheckMatrixes())
+            {
+                Form1.moves++;
+                Form1.Random2(1);
+                MirrorMatrix();
+            }
         }
         private bool CheckMatrixes()
         {
-            bool isSame = true;
-            for (int i = 0; i < Matrix.GetLength(0); i++)
-			{
-                for (int g = 0; g < Matrix.GetLength(1); g++)
-			    {
-                    if (Matrix[i,g]!=TempMatrix[i,g]) isSame = false;
-                    break;
-			    }
-			}
-            return isSame;
+            return Matrix == TempMatrix;
         }
         public void Up()
         {
@@ -44,12 +55,9 @@ namespace _2048_WPF
                     MoveTo(sor, oszlop, 0);
                 }
             }
-            if (!CheckMatrixes())
-            {
-                Form1.moves++;
-                TempMatrix=Matrix;
-            }
+            Check();
         }
+        
         public void Right()
         {
             for (int oszlop = palyameret - 2; oszlop > 0; oszlop--)
@@ -60,11 +68,7 @@ namespace _2048_WPF
                     MoveTo(sor, oszlop, 1);
                 }
             }
-            if (!CheckMatrixes())
-            {
-                Form1.moves++;
-                TempMatrix=Matrix;
-            }
+            Check();
         }
         public void Down()
         {
@@ -76,11 +80,7 @@ namespace _2048_WPF
                     MoveTo(sor, oszlop, 2);
                 }
             }
-            if (!CheckMatrixes())
-            {
-                Form1.moves++;
-                TempMatrix=Matrix;
-            }
+            Check();
         }
         public void Left()
         {
@@ -92,11 +92,7 @@ namespace _2048_WPF
                     MoveTo(sor, oszlop, 3);
                 }
             }
-            if (!CheckMatrixes())
-            {
-                Form1.moves++;
-                TempMatrix=Matrix;
-            }
+            Check();
         }
         private void MoveTo(int row, int col, int dir)
         {

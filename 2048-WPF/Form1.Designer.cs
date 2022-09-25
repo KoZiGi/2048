@@ -36,6 +36,7 @@ namespace _2048_WPF
             this.LeftBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@ namespace _2048_WPF
             this.UpBtn.TabIndex = 1;
             this.UpBtn.Text = "Fel";
             this.UpBtn.UseVisualStyleBackColor = true;
+            this.UpBtn.Visible = false;
             this.UpBtn.Click += new System.EventHandler(this.UpBtn_Click);
             // 
             // SwitchToKbdBtn
@@ -58,6 +60,7 @@ namespace _2048_WPF
             this.SwitchToKbdBtn.Size = new System.Drawing.Size(40, 40);
             this.SwitchToKbdBtn.TabIndex = 1;
             this.SwitchToKbdBtn.UseVisualStyleBackColor = true;
+            this.SwitchToKbdBtn.Visible = false;
             this.SwitchToKbdBtn.Click += new System.EventHandler(this.SwitchToKbdBtn_Click);
             this.SwitchToKbdBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SwitchToKbdBtn_KeyPress);
             // 
@@ -70,6 +73,7 @@ namespace _2048_WPF
             this.DownBtn.TabIndex = 1;
             this.DownBtn.Text = "Le";
             this.DownBtn.UseVisualStyleBackColor = true;
+            this.DownBtn.Visible = false;
             this.DownBtn.Click += new System.EventHandler(this.DownBtn_Click);
             // 
             // RightBtn
@@ -81,6 +85,7 @@ namespace _2048_WPF
             this.RightBtn.TabIndex = 1;
             this.RightBtn.Text = "Jobb";
             this.RightBtn.UseVisualStyleBackColor = true;
+            this.RightBtn.Visible = false;
             this.RightBtn.Click += new System.EventHandler(this.RightBtn_Click);
             // 
             // LeftBtn
@@ -92,11 +97,12 @@ namespace _2048_WPF
             this.LeftBtn.TabIndex = 1;
             this.LeftBtn.Text = "Bal";
             this.LeftBtn.UseVisualStyleBackColor = true;
+            this.LeftBtn.Visible = false;
             this.LeftBtn.Click += new System.EventHandler(this.LeftBtn_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 407);
+            this.button1.Location = new System.Drawing.Point(12, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 19;
@@ -106,16 +112,36 @@ namespace _2048_WPF
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(25, 380);
+            this.numericUpDown1.Location = new System.Drawing.Point(13, 14);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(37, 20);
             this.numericUpDown1.TabIndex = 20;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Játékmező mérete";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 442);
+            this.ClientSize = new System.Drawing.Size(246, 75);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LeftBtn);
@@ -127,6 +153,7 @@ namespace _2048_WPF
             this.Text = "2048";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -138,6 +165,7 @@ namespace _2048_WPF
         private System.Windows.Forms.Button LeftBtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
