@@ -116,7 +116,7 @@ namespace _2048_WPF
                 while (count != gen)
                 {
                     Random x = new Random(), y = new Random();
-                    int X = x.Next(1, 5), Y = y.Next(1, 5);
+                    int X = x.Next(1, GameField.GetLength(0) - 1), Y = y.Next(1, GameField.GetLength(1)-1);
                     if (GameField[X, Y] == 0)
                     {
                         GameField[X, Y] = x.Next(1, 3) == 1 ? 2 : 4;
@@ -128,7 +128,7 @@ namespace _2048_WPF
             {
                 if (CheckMovent())
                 {
-                    MessageBox.Show("mehu");
+                    MessageBox.Show("Game Over!");
                 }
             }
         }
@@ -147,7 +147,7 @@ namespace _2048_WPF
         {
             int[,] tempfield = GameField;
             Random x = new Random(), y = new Random();
-            int X = x.Next(1, 5), Y = y.Next(1, 5);
+            int X = x.Next(1, tempfield.GetLength(0) - 1), Y = y.Next(1, tempfield.GetLength(1) - 1);
             if (tempfield[X, Y] == 0)
             {
                 tempfield[X, Y] = x.Next(0, 1) == 0 ? 2 : 4;
@@ -238,6 +238,8 @@ namespace _2048_WPF
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            numericUpDown1.Visible = false;
+            button1.Visible = false;
             foreach (Label l in labels)
             {
                 Controls.Remove(l);
